@@ -10,6 +10,7 @@ class HomeNews(ListView):
     model = News
     template_name = 'news/index.html'
     context_object_name = 'news'
+    queryset = News.objects.select_related('category')
     # для статичных данных
     extra_context = {
         'title': 'Главная'
@@ -21,8 +22,9 @@ class HomeNews(ListView):
         context['title'] = 'Главная страница'
         return context
 
-    def get_queryset(self):
-        return News.objects.filter(is_published=True)
+    # def get_queryset(self):
+    #     return News.objects.filter(is_published=True).select_related('category')
+        # select_related('category') - уменьшить кол-во sql запросов
 
 
 class NewsByCategory(ListView):
@@ -37,7 +39,7 @@ class NewsByCategory(ListView):
         return context
 
     def get_queryset(self):
-        return News.objects.filter(category_id=self.kwargs['category_id'])
+        return News.objects.filter(category_id=self.kwargs['category_id']).select_related('category')
 
 
 class ViewNews(DetailView):

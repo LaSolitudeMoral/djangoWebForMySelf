@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'ckeditor',
     'ckeditor_uploader',
+    'captcha',
     'news.apps.NewsConfig',
 ]
 
@@ -138,6 +139,16 @@ EMAIL_PORT = 587  # 465
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+CAPTHCA_NOISE_FUNCTIONS = None
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'django_cache',
+    }
+}
 
 CKEDITOR_CONFIGS = {
     'default': {

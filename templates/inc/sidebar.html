@@ -3,10 +3,9 @@
 <div class="list-group">
     {% get_categories as categories %}
     {% for item in categories %}
-        <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action active"
-           aria-current="true">
-            {{ item.title }}
-        </a>
+    <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action active" aria-current="true">
+        {{ item.title }}
+    </a>
     {% endfor %}
 </div>
 {% endcomment %}

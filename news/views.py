@@ -121,7 +121,7 @@ def email_sending(request):
             else:
                 messages.error(request, 'Письмо не отправлено')
         else:
-            messages.error(request, 'Ошибка регистрации')
+            messages.error(request, 'Ошибка валидации')
     else:
         form = ContactForm()
     return render(request, 'news/email_sending.html', {'form': form})

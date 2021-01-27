@@ -21,7 +21,10 @@
         {% now "Y-m-d H:i" %}
         <div class="row">
             <div class="col-md-3">
+                {% load cache %}
+                {% cache 5 sidebar %}
                 {% block sidebar %}Side bar - extension block{% endblock sidebar %}
+                {% endcache %}
             </div>
             <div class="col-md-9">
                 {% if messages %}

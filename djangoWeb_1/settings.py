@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'captcha',
+    'mptt',
     'news.apps.NewsConfig',
+    'testapp.apps.TestappConfig',
 ]
 
 MIDDLEWARE = [
@@ -218,3 +220,5 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+MPTT_ADMIN_LEVEL_INDENT = 20

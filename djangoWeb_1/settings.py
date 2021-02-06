@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mptt',
     'news.apps.NewsConfig',
     'testapp.apps.TestappConfig',
+    'upravlenie.apps.UpravlenieConfig',
 ]
 
 MIDDLEWARE = [

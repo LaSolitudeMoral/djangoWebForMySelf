@@ -13,6 +13,7 @@ from django.core.mail import send_mail
 # def paginator
 
 
+
 def test(request):
     objects = ['john1', 'paul2', 'george3',
                'ringo4', 'nikita5', 'stewe6', 'eduardo7']

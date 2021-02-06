@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 import debug_toolbar
 
+from upravlenie.views import upravlenie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,8 @@ urlpatterns = [
     path('', include('news.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
     path('captcha/', include('captcha.urls')),
-    path('', include('testapp.urls'))
+    path('', include('testapp.urls')),
+    path('upravlenie/', upravlenie, name='upravlenie')
 ]
 
 

@@ -14,7 +14,6 @@
         {% csrf_token %}
 
         <!-- Ручной вывод формы -->
-        {% comment %}
         {{ form.non_field_errors }}
         <div class="form-group">
             <label for="{{ form.title.id_for_label }}">Название: </label>
@@ -47,11 +46,11 @@
                 {{ form.category.errors }}
             </div>
         </div>
-        {% endcomment %}
+
 
 
         <!-- Автоматический вывод формы -->
-        {{ form.as_p }}
+{#        {{ form.as_p }}#}
 
 
         <!-- Полуавтоматический вывод формы -->
